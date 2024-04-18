@@ -41,7 +41,56 @@ Aqui vamos replicar capítulo à capítulo as atividades da apostila, inclusive 
 
 ### Somatório e Produtório
 
-${\displaystyle \sum_{i=1}^n}x_{i}=x_{1}+x_{2}+x_{3}+\cdots+x_{n}$
+$${\displaystyle \sum_{i=1}^n}x_{i}=x_{1}+x_{2}+x_{3}+\cdots+x_{n}$$
+
+-----
+
+Lê-se: somatório de $x$ índice $i$, com $i$ variando de $1$ até $n$, onde:
+
+$n$, é a ordem da última parcela ou limite superior $(LS)$ do somatório;
+
+$i=1$, é a ordem da primeira parcela da soma ou limite inferior do somatório $(LI)$;
+
+$i$, é o índice.
+
+-----
+
+**Observe:**
+
+$\displaystyle\sum_{i=1}^{n}x_i^2=x_1^2+x_2^2+ \cdots +x_n^2$
+
+$(\displaystyle\sum_{i=1}^{n}x_i)^2=(x_1+x_2+ \cdots +x_n)^2$
+
+$\displaystyle\sum_{i=1}^{n}x_i y_i=x_1 y_1+x_2 y_2+ \cdots +x_n y_n$
+
+$\displaystyle\sum_{i=1}^{n}x_i \displaystyle\sum_{i=1}^{n}y_i=(x_1+x_2+\cdots+x_n) \cdot (y_1+y_2+ \cdots +y_n)$
+
+-----
+
+**Número de Termos:** 
+
+$$NT = (LS - LI) + 1 - r$$
+
+onde $r$ é o número de restrições a que o somatório está sujeito.
+
+-----
+
+**Propriedades de Somatório:**
+
+Somatório de uma constante:
+
+$\displaystyle\sum_{i=1}^{n}K=K+K+K+\cdots+K=nK$
+      
+Somatório do produto de uma constante por uma variável:
+
+$\displaystyle\sum_{i=1}^{n}K x_i=K x_1+K x_2+ \cdots +K x_n=K(x_1+x_2+ \cdots +x_n)$
+
+Somatório de uma soma ou subtração de variáveis:
+
+$\displaystyle\sum_{i=1}^{n}(X_i+Y_i-W_i)=\displaystyle\sum_{i=1}^{n}X_i+\displaystyle\sum_{i=1}^{n}Y_i-\displaystyle\sum_{i=1}^{n}W_i$
+
+-----
+ 
 
 ```{r sumAndProd1, exercise=TRUE}
 vec = c(1, 2, 3 , 4) 
@@ -59,7 +108,7 @@ print("Product of the vector:")
 print(prod(vec))
 ```
 
-**Exemplo:** Considere as variáveis $X$ e $Y$ que representam, respectivamente, as notas de duas disciplinas para um grupo de 6 alunos.
+<h3>Exemplo</h3> Considere as variáveis $X$ e $Y$ que representam, respectivamente, as notas de duas disciplinas para um grupo de 6 alunos.
 
 \begin{align}
 X&=\{90, 95, 97, 98, 100, 60\}\\
@@ -68,7 +117,7 @@ Y&=\{60, 70, 80, 60, 90, 75\}
 
 Verifique se os seguintes somatórios fornecem as respostas conforme apresentado:
 
-```{r som1}
+```{r som1, exercise=TRUE}
 x <- c(90, 95, 97, 98, 100, 60)
 y <- c(60, 70, 80, 60, 90, 75)
 
@@ -83,37 +132,61 @@ sum(x)*sum(y)
 
 Os códigos acima representam, respectivamente:
 
-\begin{align}
-\sum_{i=1}^{n}x_{i}&=540\quad \sum_{i=1}^{n}x_{i}^{2}=49738\quad \left(\sum_{i=1}^{n}x_{i}\right)^{2}&=291600\\
-\sum_{i=1}^{n}x_{i}y_{i}&=39190\quad \sum_{i=1}^{n}x_{i}\sum_{i=1}^{n}y_{i}=234900\\
-\end{align}
+$\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \displaystyle\sum_{i=1}^{n}x_{i}=540 ; \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \quad \sum_{i=1}^{n}x_{i}^{2}=49738$ ; 
+
+$\quad \left(\displaystyle\sum_{i=1}^{n}x_{i}\right)^{2}=291600 ; \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \sum_{i=1}^{n}x_{i}y_{i}=39190\quad ; \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \sum_{i=1}^{n}x_{i}\sum_{i=1}^{n}y_{i}=234900.$
 
 -----
 
-<h1>Exercícios Práticos</h1>
+<h3>Produtório</h3>
 
-Vamos calcular a soma utilizando os seguintes dados...
+$$\displaystyle\prod_{i=1}^{n} x_i = x_1 \cdot x_2 \cdot \cdots \cdot x_n$$
 
-### Exercise 
+Lê-se: produtório de $x$ índice $i$, com $i$ variando de $1$ a $n$.
 
-*Here's a simple exercise with an empty code chunk provided for entering the answer.*
+-----
 
-Write the R code required to add two plus two:
+**Observe:**
 
-```{r two-plus-two, exercise=TRUE}
+$\displaystyle\prod_{i=1}^{n} b = b^n$
 
-```
+$\displaystyle\prod_{i=1}^{n} cx_i=cx_1 \cdot cx_2 \cdot \cdots \cdot xcx_n = c^n \cdot x_1 \cdot x_2 \cdot \cdots \cdot x_n = c^n \displaystyle\prod_{i=1}^{n} x_i$
 
-### Exercise with Code
+$\displaystyle\prod_{i=1}^{n}x_i y_i = x_1 y_1 \cdot x_2 y_2 \cdot \cdots \cdot x_n y_n = (x_1 \cdot x_2 \cdot \cdots \cdot x_n) \cdot (y_1 \cdot y_2 \cdot \cdots \cdot y_n) = (\displaystyle\prod_{i=1}^{n} x_i) \cdot (\displaystyle\prod_{i=1}^{n} y_i)$
 
-*Here's an exercise with some prepopulated code as well as `exercise.lines = 5` to provide a bit more initial room to work.*
+$\displaystyle\prod_{i=1}^{n} i= 1 \cdot 2 \cdot 3 \cdot \cdots \cdot n = n!$
 
-Now write a function that adds any two numbers and then call it:
+$log\displaystyle\prod_{i=1}^{n} x_i =log(x_1 \cdot x_2 \cdot \cdots \cdot x_n) = log x_1 +log x_2 + \cdots + log x_n = \displaystyle \sum_{i=1}^n log x_{i}$
 
-```{r add-function, exercise=TRUE, exercise.lines = 5}
-add <- function() {
-  
-}
+-----
+
+### Exercícios 
+
+Sabendo-se que ${\displaystyle \sum_{i=1}^5}x_{i}=-6$ e ${\displaystyle \sum_{i=1}^5}x_{i}^2=12$, calcule:
+
+${\displaystyle \sum_{i=1}^5}(4x_{i}+5)$
+
+${\displaystyle \sum_{i=1}^5}x_{i}(x_i -2)$
+
+${\displaystyle \sum_{i=1}^5}(x_{i}-3)^2$
+
+-----
+
+### Exercício com R
+
+Agora é hora de praticar com o R. Aproveite o espaço abaixo para efetuar as seguintes somas: 
+
+${\displaystyle \sum_{i=1}^5}x_i$ ;\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ${\displaystyle \sum_{i=1}^5}{x_i}^2$
+
+$({\displaystyle \sum_{i=1}^5}x_i)^2$ ; \ \ \ \ \ \ \ \ \ \ \ \ \ \ ${\displaystyle \sum_{i=1}^5}x_i \cdot {\displaystyle \sum_{i=1}^4}y_i$
+
+${\displaystyle \sum_{i=1}^4}y_i$ ;\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ${\displaystyle \sum_{i=1}^4}{y_i}^2$
+
+
+```{r exercicio1, exercise=TRUE}
+x <- c(1,2,3,4,5)
+y <- c(3,5,7,9)
+
 ```
 
 
@@ -121,24 +194,11 @@ add <- function() {
 
 ### Apresentação Tabular
 
-Barulho é medido em decibéis, representado por dB. Um decibel corresponde ao nível do
-som mais fraco que pode ser ouvido em um local silencioso por alguém com boa audição. Um
-sussurro corresponde a cerca de 30 dB; a voz humana em conversação normal corresponde a
-cerca de 70dB; um rádio em volume alto cerca de 100 dB; Desconforto para os ouvidos
-geralmente ocorre a cerca de 120 dB. Os dados abaixo correspondem aos níveis de barulho
-medidos em 36 horários diferentes em um determinado local.
+Organização dos dados em classes de ocorrência, ou não, segundo suas frequências absolutas.
+A apresentação atravez de uma tabela de frequência é util quando o número de valores distintos da variável em estudo é muito grande. Em tais
+casos seria útil dividir os valores em grupos, ou intervalos de classe.
 
-```{r stem1}
-x <- c(82, 89, 94, 110, 74 , 122, 112, 95,  100, 78,  65,  60,
-90, 83, 87,  75, 114, 85  ,69  ,94  ,124, 115 ,107, 88,
-97, 74, 72,  68, 83 , 91  ,90  ,102, 77,  125, 108, 65)
-stem(x)
-```
-
-
-### Apresentação Gráfica
-
-```{r companhia1}
+```{r companhia1, exercise=TRUE}
 library(data.table)
 tab2_1 <- fread("Dados/CompanhiaMB.csv")
 names(tab2_1)
@@ -146,7 +206,7 @@ summary(tab2_1$Salario)
 
 ```
 
-```{r companhia2}
+```{r companhia2, exercise=TRUE}
 ni<-table(tab2_1$Grau) # Calcula a tabela de frequências absolutas e armazena o resultado em 'mytab'
 fi<-prop.table(ni) # Tabela de frequências relativas (f_i)
 p_fi<-100*prop.table(ni) # Porcentagem (100 f_i)
@@ -160,7 +220,7 @@ tab2_2<-cbind(ni,fi=round(fi,digits=2),p_fi=round(p_fi,digits=2))
 tab2_2
 ```
 
-```{r companhia3}
+```{r companhia3, exercise=TRUE}
 #quebras de linha apenas ilustrativas para facilitar a leitura
 tab2_3<-as.data.frame(
         t(rbind(
@@ -172,6 +232,23 @@ tab2_3<-as.data.frame(
 tab2_3
 ```
 
+### Apresentação Gráfica
+
+Existem várias representações gráficas que podem facilitar a visualização de alguns dados. Abaixo será presentado algumas dessas opções.
+
+<h3>Diagrama de folhas e ramos</h3>
+
+Observe com o exemplo abaixo como o diagrama de folhas e ramos pode auxiliar no estudo de determinados bancos de dados.
+
+Barulho é medido em decibéis, representado por dB. Um decibel corresponde ao nível do
+som mais fraco que pode ser ouvido em um local silencioso por alguém com boa audição. Um sussurro corresponde a cerca de 30 dB; a voz humana em conversação normal corresponde a cerca de 70dB; um rádio em volume alto cerca de 100 dB; Desconforto para os ouvidos geralmente ocorre a cerca de 120 dB. Os dados abaixo correspondem aos níveis de barulho medidos em 36 horários diferentes em um determinado local.
+
+```{r stem1, exercise=TRUE}
+x <- c(82, 89, 94, 110, 74 , 122, 112, 95,  100, 78,  65,  60,
+90, 83, 87,  75, 114, 85  ,69  ,94  ,124, 115 ,107, 88,
+97, 74, 72,  68, 83 , 91  ,90  ,102, 77,  125, 108, 65)
+stem(x)
+```
 
 ### Medidas de Posição
 

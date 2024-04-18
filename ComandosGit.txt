@@ -1,0 +1,2 @@
+git add --all && git commit -m "Coloque aqui a messagem"
+git push
