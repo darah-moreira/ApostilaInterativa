@@ -27,9 +27,11 @@ runtime: shiny_prerendered
 
 ```{r setup, include=FALSE}
 library(learnr)
+library(kableExtra)
 knitr::opts_chunk$set(echo = T, warning = F, fig.align = "center", message = F,
                       error = F)
 ```
+
 
 # Apostila de EST 106
 
@@ -134,7 +136,7 @@ Os códigos acima representam, respectivamente:
 
 $\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \displaystyle\sum_{i=1}^{n}x_{i}=540 ; \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \quad \sum_{i=1}^{n}x_{i}^{2}=49738$ ; 
 
-$\quad \left(\displaystyle\sum_{i=1}^{n}x_{i}\right)^{2}=291600 ; \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \sum_{i=1}^{n}x_{i}y_{i}=39190\quad ; \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \sum_{i=1}^{n}x_{i}\sum_{i=1}^{n}y_{i}=234900.$
+$\quad \left(\displaystyle\sum_{i=1}^{n}x_{i}\right)^{2}=291600 ; \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \sum_{i=1}^{n}x_{i}y_{i}=39190\quad ; \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \sum_{i=1}^{n}x_{i}\sum_{i=1}^{n}y_{i}=234900.$
 
 -----
 
@@ -194,9 +196,15 @@ y <- c(3,5,7,9)
 
 ### Apresentação Tabular
 
+<p style="text-align: justify;">
 Organização dos dados em classes de ocorrência, ou não, segundo suas frequências absolutas.
 A apresentação atravez de uma tabela de frequência é util quando o número de valores distintos da variável em estudo é muito grande. Em tais
 casos seria útil dividir os valores em grupos, ou intervalos de classe.
+</p>
+
+Uma maneira de escolher o número de classes $(k): \sqrt{n}$
+
+Amplitude da classe: $\frac{(LS - LI)}{\sqrt{n}}$
 
 ```{r companhia1, exercise=TRUE}
 library(data.table)
@@ -231,18 +239,28 @@ tab2_3<-as.data.frame(
         )
 tab2_3
 ```
+### Exercícios 
+<p style="text-align: justify;">
+Suponha que uma empresa deseja avaliar a distribuição dos salários pagos por hora a seus funcionários. Dados (dados brutos):
+</p>
+$$
+13,3 ; \ 15,2  ; \ 12,4 ; \ 15,8 ; \ 9,6 ; \ 10,4 ; \ 13,2 ; \ 8,8 ; \ 8,3 ; \ 8,5 \\
+10,2 ; \ 11,5 ; \ 12,6 ; \ 10,7 ; \ 12,6 ; \ 9,7 ; \ 12,1 ; \ 13,5 ; \ 10,3 ; \ 14,3 \\
+9,8 ; \ 12,3 ; \ 10,4 ; \ 11,6 ; \ 12,4 ; \ 12,9 ; \ 11,6 ; \ 10,3 ; \ 14,2 ; \ 13,8 
+$$
+Construa uma tabela de frequência utilizando os dados acima.
 
 ### Apresentação Gráfica
-
+<p style="text-align: justify;">
 Existem várias representações gráficas que podem facilitar a visualização de alguns dados. Abaixo será presentado algumas dessas opções.
-
+</p>
 <h3>Diagrama de folhas e ramos</h3>
-
+<p style="text-align: justify;">
 Observe com o exemplo abaixo como o diagrama de folhas e ramos pode auxiliar no estudo de determinados bancos de dados.
 
 Barulho é medido em decibéis, representado por dB. Um decibel corresponde ao nível do
 som mais fraco que pode ser ouvido em um local silencioso por alguém com boa audição. Um sussurro corresponde a cerca de 30 dB; a voz humana em conversação normal corresponde a cerca de 70dB; um rádio em volume alto cerca de 100 dB; Desconforto para os ouvidos geralmente ocorre a cerca de 120 dB. Os dados abaixo correspondem aos níveis de barulho medidos em 36 horários diferentes em um determinado local.
-
+</p>
 ```{r stem1, exercise=TRUE}
 x <- c(82, 89, 94, 110, 74 , 122, 112, 95,  100, 78,  65,  60,
 90, 83, 87,  75, 114, 85  ,69  ,94  ,124, 115 ,107, 88,
@@ -251,7 +269,64 @@ stem(x)
 ```
 
 ### Medidas de Posição
+<p style="text-align: justify;">
+Apresentaremos algumas estatísticas úteis para resumir, de modo bastante conciso, as
+informações contidas em um conjunto de dados.
+</p>
+<h3>Média Aritmética</h3>
 
+Dado um conjunto de n valores numéricos $x_1, x_2,\cdots, x_n$
+
+$\overline{x} = \frac{\displaystyle \sum_{i=1}^n x_{i}}{n}$
+
+<h5>Exemplo</h5>
+A média aritmética de $x = \{10, 15, 11\}$ é:
+
+$\overline{x} = \frac{\displaystyle \sum_{i=1}^3 x_{i}}{3}= \frac{10+15+11}{3} = \frac{36}{3} = 12$
+
+<h3>Média Ponderada</h3>
+
+$\overline{x} = \frac{\displaystyle \sum_{i=1}^k f_i x_{i}}{n}$ , onde 
+$\displaystyle \sum_{i=1}^k f_i = n$
+
+-----
+**Exemplo**
+
+Encontre a mediana da idade dos indivíduos:
+
+| Idade    |Frequência| 
+|:--------:|:--------:|
+|    15    |    14    |
+|    16    |    15    | 
+|    17    |    14    |
+|    18    |     4    | 
+|    19    |     5    |
+|    20    |     2    | 
+
+<p style="text-align: justify;">
+**Solução**
+já que temos 54 observações, segue que a mediana amostral será a media dos valores ocupando as posições 27 e 28, quando essas 54 observações são organizadas em ordem crescente. Portanto a mediana será o valor 16.
+</p>
+
+-----
+
+<h3>Mediana Amostral</h3>
+<p style="text-align: justify;">
+valor intermediário do rol de um conjunto de dados.
+
+Se $n$ for ímpar: A mediana será o valor que ocupa a posição $\frac{(n + 1)}{2}$;
+
+se $n$ for par: A mediana será a média dos valores ocupando as posições $\frac{n}{2}$ e $\frac{n}{2}+1$.
+</p>
+
+<h3>Moda Amostral</h3>
+
+<p style="text-align: justify;">
+É o valor que ocorre com maior frequência.
+
+Podemos ter séries amodais, unimodais, bimodais ou multimodais, dependendo do número
+de valores modais (0, 1, 2, mais que 2, respectivamente) ocorrendo na amostra.
+</p>
 ### Medidas de Dispersão
 
 

@@ -287,7 +287,7 @@ sum(x)*sum(y)</code></pre>
 <p><span class="math inline">\(\quad
 \left(\displaystyle\sum_{i=1}^{n}x_{i}\right)^{2}=291600 ; \ \ \ \ \ \ \
 \ \ \ \ \ \ \ \ \ \ \ \sum_{i=1}^{n}x_{i}y_{i}=39190\quad ; \ \ \ \ \ \
-\ \ \ \ \ \ \ \ \ \ \ \ \
+\ \ \ \ \ \ \ \ \ \ \ \
 \sum_{i=1}^{n}x_{i}\sum_{i=1}^{n}y_{i}=234900.\)</span></p>
 <hr />
 <h3>
@@ -365,11 +365,17 @@ Estatística Descritiva</h2>
 number="1.2.1">
 <h3><span class="header-section-number">1.2.1</span> Apresentação
 Tabular</h3>
-<p>Organização dos dados em classes de ocorrência, ou não, segundo suas
+<p style="text-align: justify;">
+Organização dos dados em classes de ocorrência, ou não, segundo suas
 frequências absolutas. A apresentação atravez de uma tabela de
 frequência é util quando o número de valores distintos da variável em
 estudo é muito grande. Em tais casos seria útil dividir os valores em
-grupos, ou intervalos de classe.</p>
+grupos, ou intervalos de classe.
+</p>
+<p>Uma maneira de escolher o número de classes <span
+class="math inline">\((k): \sqrt{n}\)</span></p>
+<p>Amplitude da classe: <span class="math inline">\(\frac{(LS -
+LI)}{\sqrt{n}}\)</span></p>
 <div class="tutorial-exercise" data-label="companhia1"
 data-completion="1" data-diagnostics="1" data-startover="1"
 data-lines="0" data-pipe="|&gt;">
@@ -410,26 +416,46 @@ tab2_3</code></pre>
 <script type="application/json" data-ui-opts="1">{"engine":"r","has_checker":false,"caption":"<span data-i18n=\"text.enginecap\" data-i18n-opts=\"{&quot;engine&quot;:&quot;R&quot;}\">R Code<\/span>"}</script>
 </div>
 </div>
+<div id="section-exercícios-1" class="section level3" number="1.2.2">
+<h3><span class="header-section-number">1.2.2</span> Exercícios</h3>
+<p style="text-align: justify;">
+Suponha que uma empresa deseja avaliar a distribuição dos salários pagos
+por hora a seus funcionários. Dados (dados brutos):
+</p>
+<p><span class="math display">\[
+13,3 ; \ 15,2  ; \ 12,4 ; \ 15,8 ; \ 9,6 ; \ 10,4 ; \ 13,2 ; \ 8,8 ; \
+8,3 ; \ 8,5 \\
+10,2 ; \ 11,5 ; \ 12,6 ; \ 10,7 ; \ 12,6 ; \ 9,7 ; \ 12,1 ; \ 13,5 ; \
+10,3 ; \ 14,3 \\
+9,8 ; \ 12,3 ; \ 10,4 ; \ 11,6 ; \ 12,4 ; \ 12,9 ; \ 11,6 ; \ 10,3 ; \
+14,2 ; \ 13,8
+\]</span> Construa uma tabela de frequência utilizando os dados
+acima.</p>
+</div>
 <div id="section-apresentação-gráfica" class="section level3"
-number="1.2.2">
-<h3><span class="header-section-number">1.2.2</span> Apresentação
+number="1.2.3">
+<h3><span class="header-section-number">1.2.3</span> Apresentação
 Gráfica</h3>
-<p>Existem várias representações gráficas que podem facilitar a
+<p style="text-align: justify;">
+Existem várias representações gráficas que podem facilitar a
 visualização de alguns dados. Abaixo será presentado algumas dessas
-opções.</p>
+opções.
+</p>
 <h3>
 Diagrama de folhas e ramos
 </h3>
+<p style="text-align: justify;">
 <p>Observe com o exemplo abaixo como o diagrama de folhas e ramos pode
 auxiliar no estudo de determinados bancos de dados.</p>
-<p>Barulho é medido em decibéis, representado por dB. Um decibel
+Barulho é medido em decibéis, representado por dB. Um decibel
 corresponde ao nível do som mais fraco que pode ser ouvido em um local
 silencioso por alguém com boa audição. Um sussurro corresponde a cerca
 de 30 dB; a voz humana em conversação normal corresponde a cerca de
 70dB; um rádio em volume alto cerca de 100 dB; Desconforto para os
 ouvidos geralmente ocorre a cerca de 120 dB. Os dados abaixo
 correspondem aos níveis de barulho medidos em 36 horários diferentes em
-um determinado local.</p>
+um determinado local.
+</p>
 <div class="tutorial-exercise" data-label="stem1" data-completion="1"
 data-diagnostics="1" data-startover="1" data-lines="0"
 data-pipe="|&gt;">
@@ -441,13 +467,80 @@ stem(x)</code></pre>
 </div>
 </div>
 <div id="section-medidas-de-posição" class="section level3"
-number="1.2.3">
-<h3><span class="header-section-number">1.2.3</span> Medidas de
-Posição</h3>
-</div>
-<div id="section-medidas-de-dispersão" class="section level3"
 number="1.2.4">
 <h3><span class="header-section-number">1.2.4</span> Medidas de
+Posição</h3>
+<p style="text-align: justify;">
+Apresentaremos algumas estatísticas úteis para resumir, de modo bastante
+conciso, as informações contidas em um conjunto de dados.
+</p>
+<h3>
+Média Aritmética
+</h3>
+<p>Dado um conjunto de n valores numéricos <span
+class="math inline">\(x_1, x_2,\cdots, x_n\)</span></p>
+<p><span class="math inline">\(\overline{x} = \frac{\displaystyle
+\sum_{i=1}^n x_{i}}{n}\)</span></p>
+<h5>
+Exemplo
+</h5>
+<p>A média aritmética de <span class="math inline">\(x = \{10, 15,
+11\}\)</span> é:</p>
+<p><span class="math inline">\(\overline{x} = \frac{\displaystyle
+\sum_{i=1}^3 x_{i}}{3}= \frac{10+15+11}{3} = \frac{36}{3} =
+12\)</span></p>
+<h3>
+Média Ponderada
+</h3>
+<p><span class="math inline">\(\overline{x} = \frac{\displaystyle
+\sum_{i=1}^k f_i x_{i}}{n}\)</span> , onde <span
+class="math inline">\(\displaystyle \sum_{i=1}^k f_i = n\)</span></p>
+<table style="width:8%;">
+<colgroup>
+<col width="8%" />
+</colgroup>
+<tbody>
+<tr class="odd">
+<td><strong>Exemplo</strong></td>
+</tr>
+<tr class="even">
+<td>Encontre a mediana da idade dos indivíduos:</td>
+</tr>
+<tr class="odd">
+<td>| Idade |Frequência| |:——–:|:——–:| | 15 | 14 | | 16 | 15 | | 17 | 14
+| | 18 | 4 | | 19 | 5 | | 20 | 2 |</td>
+</tr>
+<tr class="even">
+<td></td>
+</tr>
+</tbody>
+</table>
+<h3>
+Mediana Amostral
+</h3>
+<p style="text-align: justify;">
+<p>valor intermediário do rol de um conjunto de dados.</p>
+<p>Se <span class="math inline">\(n\)</span> for ímpar: A mediana será o
+valor que ocupa a posição <span class="math inline">\(\frac{(n +
+1)}{2}\)</span>;</p>
+se <span class="math inline">\(n\)</span> for par: A mediana será a
+média dos valores ocupando as posições <span
+class="math inline">\(\frac{n}{2}\)</span> e <span
+class="math inline">\(\frac{n}{2}+1\)</span>.
+</p>
+<h3>
+Moda Amostral
+</h3>
+<p style="text-align: justify;">
+<p>É o valor que ocorre com maior frequência.</p>
+Podemos ter séries amodais, unimodais, bimodais ou multimodais,
+dependendo do número de valores modais (0, 1, 2, mais que 2,
+respectivamente) ocorrendo na amostra.
+</p>
+</div>
+<div id="section-medidas-de-dispersão" class="section level3"
+number="1.2.5">
+<h3><span class="header-section-number">1.2.5</span> Medidas de
 Dispersão</h3>
 </div>
 </div>
@@ -609,6 +702,7 @@ Resultados</h2>
 <p>
 <script type="application/shiny-prerendered" data-context="server-start">
 library(learnr)
+library(kableExtra)
 knitr::opts_chunk$set(echo = T, warning = F, fig.align = "center", message = F,
                       error = F)
 </script>
@@ -643,7 +737,7 @@ output$`tutorial-exercise-sumAndProd1-output` <- renderUI({
 
 <script type="application/shiny-prerendered" data-context="server">
 learnr:::store_exercise_cache(structure(list(label = "sumAndProd1", global_setup = structure(c("library(learnr)", 
-"knitr::opts_chunk$set(echo = T, warning = F, fig.align = \"center\", message = F,", 
+"library(kableExtra)", "knitr::opts_chunk$set(echo = T, warning = F, fig.align = \"center\", message = F,", 
 "                      error = F)"), chunk_opts = list(label = "setup", 
     include = FALSE)), setup = NULL, chunks = list(list(label = "sumAndProd1", 
     code = "vec = c(1, 2, 3 , 4) \nprint(\"Sum of the vector:\") \n  \n# inbuilt sum method  \nprint(sum(vec)) \n  \n# using inbuilt mean method \nprint(\"Mean of the vector:\") \nprint(mean(vec))   \n  \n# using inbuilt product method \nprint(\"Product of the vector:\") \nprint(prod(vec))", 
@@ -687,7 +781,7 @@ output$`tutorial-exercise-som1-output` <- renderUI({
 
 <script type="application/shiny-prerendered" data-context="server">
 learnr:::store_exercise_cache(structure(list(label = "som1", global_setup = structure(c("library(learnr)", 
-"knitr::opts_chunk$set(echo = T, warning = F, fig.align = \"center\", message = F,", 
+"library(kableExtra)", "knitr::opts_chunk$set(echo = T, warning = F, fig.align = \"center\", message = F,", 
 "                      error = F)"), chunk_opts = list(label = "setup", 
     include = FALSE)), setup = NULL, chunks = list(list(label = "som1", 
     code = "x <- c(90, 95, 97, 98, 100, 60)\ny <- c(60, 70, 80, 60, 90, 75)\n\nsum(x)\nsum(x^2)\n(sum(x))^2\nsum(x*y)\nsum(x)*sum(y)", 
@@ -728,7 +822,7 @@ output$`tutorial-exercise-exercicio1-output` <- renderUI({
 
 <script type="application/shiny-prerendered" data-context="server">
 learnr:::store_exercise_cache(structure(list(label = "exercicio1", global_setup = structure(c("library(learnr)", 
-"knitr::opts_chunk$set(echo = T, warning = F, fig.align = \"center\", message = F,", 
+"library(kableExtra)", "knitr::opts_chunk$set(echo = T, warning = F, fig.align = \"center\", message = F,", 
 "                      error = F)"), chunk_opts = list(label = "setup", 
     include = FALSE)), setup = NULL, chunks = list(list(label = "exercicio1", 
     code = "x <- c(1,2,3,4,5)\ny <- c(3,5,7,9)\n", opts = list(
@@ -768,7 +862,7 @@ output$`tutorial-exercise-companhia1-output` <- renderUI({
 
 <script type="application/shiny-prerendered" data-context="server">
 learnr:::store_exercise_cache(structure(list(label = "companhia1", global_setup = structure(c("library(learnr)", 
-"knitr::opts_chunk$set(echo = T, warning = F, fig.align = \"center\", message = F,", 
+"library(kableExtra)", "knitr::opts_chunk$set(echo = T, warning = F, fig.align = \"center\", message = F,", 
 "                      error = F)"), chunk_opts = list(label = "setup", 
     include = FALSE)), setup = NULL, chunks = list(list(label = "companhia1", 
     code = "library(data.table)\ntab2_1 <- fread(\"Dados/CompanhiaMB.csv\")\nnames(tab2_1)\nsummary(tab2_1$Salario)\n", 
@@ -809,7 +903,7 @@ output$`tutorial-exercise-companhia2-output` <- renderUI({
 
 <script type="application/shiny-prerendered" data-context="server">
 learnr:::store_exercise_cache(structure(list(label = "companhia2", global_setup = structure(c("library(learnr)", 
-"knitr::opts_chunk$set(echo = T, warning = F, fig.align = \"center\", message = F,", 
+"library(kableExtra)", "knitr::opts_chunk$set(echo = T, warning = F, fig.align = \"center\", message = F,", 
 "                      error = F)"), chunk_opts = list(label = "setup", 
     include = FALSE)), setup = NULL, chunks = list(list(label = "companhia2", 
     code = "ni<-table(tab2_1$Grau) # Calcula a tabela de frequências absolutas e armazena o resultado em 'mytab'\nfi<-prop.table(ni) # Tabela de frequências relativas (f_i)\np_fi<-100*prop.table(ni) # Porcentagem (100 f_i)\n\n# Adiciona linhas de total\nni<-c(ni,sum(ni)) \nfi<-c(fi,sum(fi))\np_fi<-c(p_fi,sum(p_fi))\nnames(ni)[4]<-\"Total\"\ntab2_2<-cbind(ni,fi=round(fi,digits=2),p_fi=round(p_fi,digits=2))\ntab2_2", 
@@ -854,7 +948,7 @@ output$`tutorial-exercise-companhia3-output` <- renderUI({
 
 <script type="application/shiny-prerendered" data-context="server">
 learnr:::store_exercise_cache(structure(list(label = "companhia3", global_setup = structure(c("library(learnr)", 
-"knitr::opts_chunk$set(echo = T, warning = F, fig.align = \"center\", message = F,", 
+"library(kableExtra)", "knitr::opts_chunk$set(echo = T, warning = F, fig.align = \"center\", message = F,", 
 "                      error = F)"), chunk_opts = list(label = "setup", 
     include = FALSE)), setup = NULL, chunks = list(list(label = "companhia3", 
     code = "#quebras de linha apenas ilustrativas para facilitar a leitura\ntab2_3<-as.data.frame(\n        t(rbind(\n            ni=c(650,1020,330,2000),\n            p_fi=c(32.5,51,16.5,1)\n        ))\n        ,row.names =c(\"Fundamental\",\"Médio\",\"Superior\",\"Total\")\n        )\ntab2_3", 
@@ -897,7 +991,7 @@ output$`tutorial-exercise-stem1-output` <- renderUI({
 
 <script type="application/shiny-prerendered" data-context="server">
 learnr:::store_exercise_cache(structure(list(label = "stem1", global_setup = structure(c("library(learnr)", 
-"knitr::opts_chunk$set(echo = T, warning = F, fig.align = \"center\", message = F,", 
+"library(kableExtra)", "knitr::opts_chunk$set(echo = T, warning = F, fig.align = \"center\", message = F,", 
 "                      error = F)"), chunk_opts = list(label = "setup", 
     include = FALSE)), setup = NULL, chunks = list(list(label = "stem1", 
     code = "x <- c(82, 89, 94, 110, 74 , 122, 112, 95,  100, 78,  65,  60,\n90, 83, 87,  75, 114, 85  ,69  ,94  ,124, 115 ,107, 88,\n97, 74, 72,  68, 83 , 91  ,90  ,102, 77,  125, 108, 65)\nstem(x)", 
@@ -938,7 +1032,7 @@ output$`tutorial-exercise-print-limit-output` <- renderUI({
 
 <script type="application/shiny-prerendered" data-context="server">
 learnr:::store_exercise_cache(structure(list(label = "print-limit", global_setup = structure(c("library(learnr)", 
-"knitr::opts_chunk$set(echo = T, warning = F, fig.align = \"center\", message = F,", 
+"library(kableExtra)", "knitr::opts_chunk$set(echo = T, warning = F, fig.align = \"center\", message = F,", 
 "                      error = F)"), chunk_opts = list(label = "setup", 
     include = FALSE)), setup = NULL, chunks = list(list(label = "print-limit", 
     code = "mtcars", opts = list(label = "\"print-limit\"", exercise = "TRUE", 
@@ -970,16 +1064,16 @@ learnr:::store_exercise_cache(structure(list(label = "print-limit", global_setup
  
 <script type="application/shiny-prerendered" data-context="server">
 learnr:::question_prerendered_chunk(structure(list(type = "learnr_radio", label = "quiz-1", question = structure("Which package contains functions for installing other R packages?", html = TRUE, class = c("html", 
-"character")), answers = list(structure(list(id = "lnr_ans_b7ee2ca", 
+"character")), answers = list(structure(list(id = "lnr_ans_91845d9", 
     option = "base", value = "base", label = structure("base", html = TRUE, class = c("html", 
     "character")), correct = FALSE, message = NULL, type = "literal"), class = c("tutorial_question_answer", 
-"tutorial_quiz_answer")), structure(list(id = "lnr_ans_56718da", 
+"tutorial_quiz_answer")), structure(list(id = "lnr_ans_2149d29", 
     option = "tools", value = "tools", label = structure("tools", html = TRUE, class = c("html", 
     "character")), correct = FALSE, message = NULL, type = "literal"), class = c("tutorial_question_answer", 
-"tutorial_quiz_answer")), structure(list(id = "lnr_ans_3bebee9", 
+"tutorial_quiz_answer")), structure(list(id = "lnr_ans_1ea849b", 
     option = "utils", value = "utils", label = structure("utils", html = TRUE, class = c("html", 
     "character")), correct = TRUE, message = NULL, type = "literal"), class = c("tutorial_question_answer", 
-"tutorial_quiz_answer")), structure(list(id = "lnr_ans_e9c27d8", 
+"tutorial_quiz_answer")), structure(list(id = "lnr_ans_f6713a8", 
     option = "codetools", value = "codetools", label = structure("codetools", html = TRUE, class = c("html", 
     "character")), correct = FALSE, message = NULL, type = "literal"), class = c("tutorial_question_answer", 
 "tutorial_quiz_answer"))), button_labels = list(submit = structure("<span data-i18n=\"button.questionsubmit\">Submit Answer<\u002fspan>", html = TRUE, class = c("html", 
@@ -989,7 +1083,7 @@ learnr:::question_prerendered_chunk(structure(list(type = "learnr_radio", label 
 "character")), incorrect = structure("Incorrect", html = TRUE, class = c("html", 
 "character")), message = NULL, post_message = NULL), ids = list(
     answer = "quiz-1-answer", question = "quiz-1"), loading = NULL, 
-    random_answer_order = FALSE, allow_retry = FALSE, seed = 326461439.34798, 
+    random_answer_order = FALSE, allow_retry = FALSE, seed = 1129811677.97389, 
     options = list()), class = c("learnr_radio", "tutorial_question"
 )), session = session)
 </script>
@@ -997,16 +1091,16 @@ learnr:::question_prerendered_chunk(structure(list(type = "learnr_radio", label 
 
 <script type="application/shiny-prerendered" data-context="server">
 learnr:::question_prerendered_chunk(structure(list(type = "learnr_checkbox", label = "quiz-2", question = structure("Which of the R packages listed below are used to create plots?", html = TRUE, class = c("html", 
-"character")), answers = list(structure(list(id = "lnr_ans_aa09343", 
+"character")), answers = list(structure(list(id = "lnr_ans_b2aec53", 
     option = "lattice", value = "lattice", label = structure("lattice", html = TRUE, class = c("html", 
     "character")), correct = TRUE, message = NULL, type = "literal"), class = c("tutorial_question_answer", 
-"tutorial_quiz_answer")), structure(list(id = "lnr_ans_51a4465", 
+"tutorial_quiz_answer")), structure(list(id = "lnr_ans_2d7feba", 
     option = "tools", value = "tools", label = structure("tools", html = TRUE, class = c("html", 
     "character")), correct = FALSE, message = NULL, type = "literal"), class = c("tutorial_question_answer", 
-"tutorial_quiz_answer")), structure(list(id = "lnr_ans_4786334", 
+"tutorial_quiz_answer")), structure(list(id = "lnr_ans_47ea6a4", 
     option = "stats", value = "stats", label = structure("stats", html = TRUE, class = c("html", 
     "character")), correct = FALSE, message = NULL, type = "literal"), class = c("tutorial_question_answer", 
-"tutorial_quiz_answer")), structure(list(id = "lnr_ans_31d8a2a", 
+"tutorial_quiz_answer")), structure(list(id = "lnr_ans_e91749b", 
     option = "grid", value = "grid", label = structure("grid", html = TRUE, class = c("html", 
     "character")), correct = TRUE, message = NULL, type = "literal"), class = c("tutorial_question_answer", 
 "tutorial_quiz_answer"))), button_labels = list(submit = structure("<span data-i18n=\"button.questionsubmit\">Submit Answer<\u002fspan>", html = TRUE, class = c("html", 
@@ -1016,7 +1110,7 @@ learnr:::question_prerendered_chunk(structure(list(type = "learnr_checkbox", lab
 "character")), incorrect = structure("Incorrect", html = TRUE, class = c("html", 
 "character")), message = NULL, post_message = NULL), ids = list(
     answer = "quiz-2-answer", question = "quiz-2"), loading = NULL, 
-    random_answer_order = FALSE, allow_retry = FALSE, seed = 390077947.318356, 
+    random_answer_order = FALSE, allow_retry = FALSE, seed = 821379601.617515, 
     options = list()), class = c("learnr_checkbox", "tutorial_question"
 )), session = session)
 </script>
@@ -1036,7 +1130,7 @@ output$distPlot = renderPlot({
 <!--/html_preserve-->
 <!--html_preserve-->
 <script type="application/shiny-prerendered" data-context="execution_dependencies">
-{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["packages"]}},"value":[{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["packages","version"]},"class":{"type":"character","attributes":{},"value":["data.frame"]},"row.names":{"type":"integer","attributes":{},"value":[1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47]}},"value":[{"type":"character","attributes":{},"value":["backports","base","bslib","cachem","checkmate","cli","commonmark","compiler","datasets","digest","ellipsis","evaluate","fastmap","fontawesome","graphics","grDevices","htmltools","htmlwidgets","httpuv","jquerylib","jsonlite","knitr","later","learnr","lifecycle","magrittr","markdown","memoise","methods","mime","promises","R6","Rcpp","rlang","rmarkdown","rprojroot","rstudioapi","sass","shiny","stats","tools","utils","vctrs","withr","xfun","xtable","yaml"]},{"type":"character","attributes":{},"value":["1.4.1","4.3.3","0.7.0","1.0.8","2.3.1","3.6.2","1.9.1","4.3.3","4.3.3","0.6.35","0.3.2","0.23","1.1.1","0.5.2","4.3.3","4.3.3","0.5.8.1","1.6.4","1.6.15","0.1.4","1.8.8","1.46","1.3.2","0.11.5","1.0.4","2.0.3","1.12","2.0.1","4.3.3","0.12","1.3.0","2.5.1","1.0.12","1.1.3","2.26","2.0.4","0.16.0","0.4.9","1.8.1.1","4.3.3","4.3.3","4.3.3","0.6.5","3.0.0","0.43","1.8-4","2.3.8"]}]}]}
+{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["packages"]}},"value":[{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["packages","version"]},"class":{"type":"character","attributes":{},"value":["data.frame"]},"row.names":{"type":"integer","attributes":{},"value":[1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50,51,52,53,54,55,56,57,58]}},"value":[{"type":"character","attributes":{},"value":["backports","base","bslib","cachem","checkmate","cli","colorspace","commonmark","compiler","datasets","digest","ellipsis","evaluate","fastmap","fontawesome","glue","graphics","grDevices","htmltools","htmlwidgets","httpuv","jquerylib","jsonlite","kableExtra","knitr","later","learnr","lifecycle","magrittr","markdown","memoise","methods","mime","munsell","promises","R6","Rcpp","rlang","rmarkdown","rprojroot","rstudioapi","sass","scales","shiny","stats","stringi","stringr","svglite","systemfonts","tools","utils","vctrs","viridisLite","withr","xfun","xml2","xtable","yaml"]},{"type":"character","attributes":{},"value":["1.4.1","4.3.3","0.7.0","1.0.8","2.3.1","3.6.2","2.1-0","1.9.1","4.3.3","4.3.3","0.6.35","0.3.2","0.23","1.1.1","0.5.2","1.7.0","4.3.3","4.3.3","0.5.8.1","1.6.4","1.6.15","0.1.4","1.8.8","1.4.0","1.46","1.3.2","0.11.5","1.0.4","2.0.3","1.12","2.0.1","4.3.3","0.12","0.5.1","1.3.0","2.5.1","1.0.12","1.1.3","2.26","2.0.4","0.16.0","0.4.9","1.3.0","1.8.1.1","4.3.3","1.8.3","1.5.1","2.1.3","1.0.6","4.3.3","4.3.3","0.6.5","0.4.2","3.0.0","0.43","1.3.6","1.8-4","2.3.8"]}]}]}
 </script>
 <!--/html_preserve-->
 </div>

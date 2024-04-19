@@ -1,2 +1,2 @@
 # ApostilaInterativa
-Criação de uma apostila Interativa sobre Estatística Básica em 2024
+Criação de uma apostila Interativa sobre Estatística Básica
