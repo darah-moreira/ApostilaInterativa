@@ -290,18 +290,25 @@ $\overline{x} = \frac{\displaystyle \sum_{i=1}^k f_i x_{i}}{n}$ , onde
 $\displaystyle \sum_{i=1}^k f_i = n$
 
 -----
+
 **Exemplo**
 
 Encontre a mediana da idade dos indivíduos:
 
-| Idade    |Frequência| 
-|:--------:|:--------:|
-|    15    |    14    |
-|    16    |    15    | 
-|    17    |    14    |
-|    18    |     4    | 
-|    19    |     5    |
-|    20    |     2    | 
+
+```{r table, echo=FALSE, fig.align='center'}
+dados <- data.frame(
+  Idade = c(15, 16, 17, 18, 19, 20),
+  Frequencia = c(14, 15, 14, 4, 5, 2)
+)
+# Imprimir a tabela
+#knitr::kable(dados, format = "markdown", caption = "Tabela de Frequência por Idade")
+
+kableExtra::kbl(dados, booktabs = T, align = "c") %>%
+kable_styling(latex_options = c("striped", "HOLD_position"), font_size = 20, full_width = T) 
+```
+
+-----
 
 <p style="text-align: justify;">
 **Solução**
